@@ -200,11 +200,11 @@ void reshape(GLsizei w, GLsizei h)
 void mouse(int button, int state, int x, int y)
 {
 	GLfloat px = x;
-	GLfloat pz = y;
-	px = px / 250.0 - 1;
-	pz = pz / 250.0 - 1;
+	GLfloat py = y;
+	px = (px - 250)/250;
+	py = (250-py)/250;
 	lightPos[0] = px;
-	lightPos[2] = pz;
+	lightPos[2] = py;
 
 	glutPostRedisplay();
 }
